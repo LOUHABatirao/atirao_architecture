@@ -155,6 +155,72 @@
             border-left: 5px solid #667eea;
         }
 
+        .comparison-table {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead tr {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table th {
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .provider-cell {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .microsoft { color: #0078d4; }
+        .google { color: #4285f4; }
+        .amazon { color: #ff9900; }
+
+        .rating {
+            font-size: 1.2em;
+        }
+
+        .excellent { color: #00b894; }
+        .good { color: #fdcb6e; }
+        .average { color: #e17055; }
+
+        .recommendation-box {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .pros-cons-grid {
                 grid-template-columns: 1fr;
@@ -166,6 +232,14 @@
             
             .section {
                 padding: 20px;
+            }
+
+            .comparison-table {
+                font-size: 0.9em;
+            }
+
+            .comparison-table th, .comparison-table td {
+                padding: 10px 8px;
             }
         }
     </style>
@@ -338,6 +412,91 @@
             <div class="detail-box">
                 <h4>💭 Pour bien comprendre :</h4>
                 <p>C'est comme passer de votre propre générateur électrique à EDF : vous ne gérez plus la production, vous payez juste pour consommer, et c'est plus fiable. Microsoft a des milliers d'ingénieurs qui s'occupent de la sécurité et de la maintenance 24h/24.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔍 Comparaison des fournisseurs Cloud</h2>
+            
+            <div class="highlight-box">
+                <h3>📊 Microsoft vs Google vs Amazon - Lequel choisir pour Atirao ?</h3>
+                <p>Voici un comparatif simple des 3 géants du cloud computing pour vous aider à choisir :</p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Critère</th>
+                            <th class="provider-cell microsoft">🔵 Microsoft Azure</th>
+                            <th class="provider-cell google">🟡 Google Cloud</th>
+                            <th class="provider-cell amazon">🟠 Amazon AWS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>💰 Prix pour PME</strong></td>
+                            <td class="rating good">⭐⭐⭐ Bon<br><small>5-15€/utilisateur/mois</small></td>
+                            <td class="rating excellent">⭐⭐⭐⭐ Excellent<br><small>4-12€/utilisateur/mois</small></td>
+                            <td class="rating average">⭐⭐ Cher<br><small>10-25€/utilisateur/mois</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🔄 Compatibilité Windows</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Parfait<br><small>Intégration native</small></td>
+                            <td class="rating good">⭐⭐⭐ Correct<br><small>Nécessite adaptations</small></td>
+                            <td class="rating good">⭐⭐⭐ Correct<br><small>Support Windows complet</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>📁 Outils bureautiques</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Office 365<br><small>Word, Excel, Teams inclus</small></td>
+                            <td class="rating good">⭐⭐⭐ Google Workspace<br><small>Docs, Sheets, Meet</small></td>
+                            <td class="rating average">⭐⭐ Limité<br><small>Pas d'outils bureautiques</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🛠️ Facilité d'utilisation</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐ Très facile<br><small>Interface familière</small></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Excellent<br><small>Interface intuitive</small></td>
+                            <td class="rating average">⭐⭐ Complexe<br><small>Pour les experts</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🔒 Sécurité</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Excellent<br><small>Sécurité entreprise</small></td>
+                            <td class="rating excellent">⭐⭐⭐⭐ Très bon<br><small>IA anti-menaces</small></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Excellent<br><small>Leader mondial</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>📞 Support technique</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐ Très bon<br><small>Support français 24/7</small></td>
+                            <td class="rating good">⭐⭐⭐ Correct<br><small>Support multilingue</small></td>
+                            <td class="rating good">⭐⭐⭐ Correct<br><small>Documentation complète</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🌍 Conformité RGPD</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Parfait<br><small>Datacenters européens</small></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Parfait<br><small>Conformité totale</small></td>
+                            <td class="rating excellent">⭐⭐⭐⭐ Très bon<br><small>Centres EU disponibles</small></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🚀 Migration depuis votre système</strong></td>
+                            <td class="rating excellent">⭐⭐⭐⭐⭐ Très facile<br><small>Outils automatiques</small></td>
+                            <td class="rating good">⭐⭐⭐ Moyen<br><small>Quelques adaptations</small></td>
+                            <td class="rating average">⭐⭐ Difficile<br><small>Migration complexe</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="recommendation-box">
+                <h3>🏆 Notre recommandation pour Atirao</h3>
+                <h2>Microsoft Azure + Office 365</h2>
+                <p><strong>Pourquoi ?</strong> Transition la plus simple depuis votre Windows Server, outils bureautiques inclus, excellent rapport qualité-prix pour les PME, et support en français.</p>
+                <p><strong>Coût estimé :</strong> 8-12€ par utilisateur par mois (tout inclus : stockage, sécurité, Office, Teams)</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🤔 Cas où choisir autrement :</h4>
+                <p><strong>Google Cloud</strong> si vous voulez le prix le plus bas et que vos équipes utilisent déjà Gmail.<br>
+                <strong>Amazon AWS</strong> si vous avez des besoins techniques très spécifiques et une équipe IT experte.</p>
             </div>
         </div>
 
