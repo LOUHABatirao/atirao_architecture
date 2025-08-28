@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Atirao - Guide Simple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .simple-diagram {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .server-box {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 10px;
+            font-weight: bold;
+            max-width: 300px;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .pros-section, .cons-section {
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .pros-section {
+            background: linear-gradient(135deg, #00b894, #00a085);
+        }
+
+        .cons-section {
+            background: linear-gradient(135deg, #e17055, #d63031);
+        }
+
+        .detail-box {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .problem-alert {
+            background: linear-gradient(135deg, #e17055, #d63031);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .simple-list {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .simple-list h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .simple-list ul {
+            margin-left: 20px;
+        }
+
+        .simple-list li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(120deg, #a8edea, #fed6e3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Atirao - Votre Infrastructure Actuelle</h1>
+            <p>Guide simple pour comprendre votre système et les améliorations possibles</p>
+        </div>
+
+        <div class="section">
+            <h2>🖥️ Ce que vous avez actuellement</h2>
+            
+            <div class="simple-diagram">
+                <div class="server-box">
+                    🗄️ <strong>Serveur NAS</strong><br>
+                    Stocke tous vos fichiers d'entreprise
+                </div>
+                <div class="arrow">⬇️</div>
+                <div class="server-box">
+                    🖥️ <strong>Windows Server 2012</strong><br>
+                    Gère les utilisateurs et mots de passe
+                </div>
+                <div class="arrow">⬇️</div>
+                <div class="server-box">
+                    💻 <strong>Postes de travail</strong><br>
+                    Ordinateurs des employés
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>En résumé simple :</h3>
+                <p>Vous avez 2 serveurs dans vos locaux : un qui stocke les fichiers, un autre qui gère qui peut se connecter à quoi. Tous vos employés se connectent à ces serveurs pour accéder aux documents de travail.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Organisation de vos fichiers</h2>
+            
+            <div class="simple-list">
+                <h4>🗂️ Structure actuelle :</h4>
+                <ul>
+                    <li><strong>Dossier Production :</strong> Plans, documentation technique, contrôle qualité</li>
+                    <li><strong>Dossier Commercial :</strong> Devis, contrats, fichiers clients</li>
+                    <li><strong>Dossier Développement :</strong> Code informatique, projets techniques</li>
+                    <li><strong>Dossier Administratif :</strong> RH, comptabilité, documents légaux</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <p><strong>Comment ça marche :</strong> Chaque employé a accès seulement aux dossiers de son département. Par exemple, une personne de la production ne peut pas voir les fichiers commerciaux.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚖️ Avantages et Inconvénients de votre système actuel</h2>
+            
+            <div class="pros-cons-grid">
+                <div class="pros-section">
+                    <h3>✅ Ce qui marche bien</h3>
+                    <div style="margin-top: 20px;">
+                        <h4>🏃‍♂️ Rapidité</h4>
+                        <p>Accès ultra-rapide aux fichiers depuis le bureau (réseau local)</p>
+                        
+                        <h4>🎮 Contrôle total</h4>
+                        <p>Vous maîtrisez tout : où sont les données, qui y accède, comment c'est configuré</p>
+                        
+                        <h4>💰 Pas d'abonnement mensuel</h4>
+                        <p>Une fois acheté, pas de frais récurrents (juste l'électricité et maintenance)</p>
+                        
+                        <h4>🔌 Marche sans Internet</h4>
+                        <p>Si votre connexion Internet tombe, vous pouvez toujours travailler</p>
+                        
+                        <h4>📁 Simplicité</h4>
+                        <p>Système de dossiers classique, familier pour tous les employés</p>
+                    </div>
+                </div>
+                
+                <div class="cons-section">
+                    <h3>⚠️ Les gros problèmes</h3>
+                    <div style="margin-top: 20px;">
+                        <h4>⏰ Windows Server 2012 = Danger</h4>
+                        <p>Microsoft ne corrige plus les failles de sécurité depuis 2023. Votre système est vulnérable aux pirates</p>
+                        
+                        <h4>🔥 Risque de perte totale</h4>
+                        <p>Si un serveur tombe en panne, incendie, vol... vous perdez tout</p>
+                        
+                        <h4>🏠 Travail à distance impossible</h4>
+                        <p>Difficile d'accéder aux fichiers depuis la maison ou en déplacement</p>
+                        
+                        <h4>📈 Pas d'évolution possible</h4>
+                        <p>Pour plus d'espace ou d'utilisateurs, il faut acheter du nouveau matériel</p>
+                        
+                        <h4>🔧 Maintenance compliquée</h4>
+                        <p>Pannes, mises à jour, sauvegardes : tout est à votre charge</p>
+                        
+                        <h4>💾 Sauvegardes insuffisantes</h4>
+                        <p>Si vos sauvegardes sont dans le même bâtiment, elles ne protègent pas contre incendie/vol</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚨 Les vraies préoccupations à court terme</h2>
+            
+            <div class="problem-alert">
+                ⚠️ URGENT : Windows Server 2012 n'est plus sécurisé depuis octobre 2023
+            </div>
+
+            <div class="simple-list">
+                <h4>🎯 Problèmes concrets que vous risquez :</h4>
+                <ul>
+                    <li><strong>Cyberattaque :</strong> Ransomware qui chiffre tous vos fichiers et demande une rançon</li>
+                    <li><strong>Vol de données :</strong> Informations clients ou commerciales volées</li>
+                    <li><strong>Panne matérielle :</strong> Serveur qui lâche = entreprise à l'arrêt</li>
+                    <li><strong>Sinistre :</strong> Incendie, inondation = perte définitive</li>
+                    <li><strong>Employés bloqués :</strong> Impossible de travailler en télétravail</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <h4>💡 Pourquoi c'est un problème maintenant :</h4>
+                <p>Votre Windows Server 2012 était sécurisé avant, mais Microsoft a arrêté de corriger les failles de sécurité. C'est comme laisser votre maison avec une serrure cassée : au début tout va bien, mais les cambrioleurs vont finir par s'en apercevoir.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💰 Coûts cachés de votre système actuel</h2>
+            
+            <div class="simple-list">
+                <h4>🔧 Ce que vous payez sans vous en rendre compte :</h4>
+                <ul>
+                    <li><strong>Électricité :</strong> 2 serveurs qui tournent 24h/24</li>
+                    <li><strong>Climatisation :</strong> Refroidir la salle serveur</li>
+                    <li><strong>Maintenance :</strong> Technicien quand ça tombe en panne</li>
+                    <li><strong>Remplacement :</strong> Nouveau matériel quand c'est obsolète</li>
+                    <li><strong>Temps perdu :</strong> Employés bloqués pendant les pannes</li>
+                    <li><strong>Stress :</strong> Angoisse de perdre les données</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎯 Le coût du "rien faire" :</h4>
+                <p>Garder votre système actuel semble gratuit, mais les risques de sécurité et de panne coûtent plus cher qu'une migration vers le cloud. Une seule cyberattaque peut paralyser votre entreprise pendant des semaines.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>☁️ Pourquoi le cloud peut vous aider</h2>
+            
+            <div class="highlight-box">
+                <h3>🔍 Cloud = quoi exactement ?</h3>
+                <p>Au lieu d'avoir vos serveurs chez vous, vos données et applications sont hébergées dans les centres de données Microsoft (ou Google, Amazon...). Vous y accédez par Internet, comme vous consultez votre email.</p>
+            </div>
+
+            <div class="simple-list">
+                <h4>🎯 Avantages concrets pour Atirao :</h4>
+                <ul>
+                    <li><strong>Sécurité automatique :</strong> Microsoft s'occupe des mises à jour de sécurité</li>
+                    <li><strong>Accès partout :</strong> Travaillez depuis la maison, en déplacement, sur téléphone</li>
+                    <li><strong>Sauvegarde intégrée :</strong> Vos données sont automatiquement copiées dans plusieurs datacenters</li>
+                    <li><strong>Pas de panne matérielle :</strong> Si un serveur tombe, un autre prend le relais automatiquement</li>
+                    <li><strong>Outils modernes :</strong> Collaboration en temps réel, partage facile avec les clients</li>
+                    <li><strong>Évolution simple :</strong> Plus d'utilisateurs ou d'espace en quelques clics</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <h4>💭 Pour bien comprendre :</h4>
+                <p>C'est comme passer de votre propre générateur électrique à EDF : vous ne gérez plus la production, vous payez juste pour consommer, et c'est plus fiable. Microsoft a des milliers d'ingénieurs qui s'occupent de la sécurité et de la maintenance 24h/24.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Prochaine étape</h2>
+            
+            <div class="highlight-box">
+                <h3>🎯 Ce qu'il faut faire maintenant :</h3>
+                <ol style="margin-left: 20px; margin-top: 15px;">
+                    <li><strong>Audit rapide :</strong> Compter exactement combien d'utilisateurs et de données</li>
+                    <li><strong>Test pilote :</strong> Migrer un petit groupe pour tester</li>
+                    <li><strong>Formation :</strong> Apprendre aux équipes les nouveaux outils</li>
+                    <li><strong>Migration progressive :</strong> Département par département</li>
+                </ol>
+            </div>
+
+            <div class="problem-alert">
+                ⏰ Ne pas traîner : Chaque jour avec Windows Server 2012 augmente les risques de sécurité
+            </div>
+        </div>
+    </div>
+</body>
+</html>
